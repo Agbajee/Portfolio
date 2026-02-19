@@ -1,0 +1,239 @@
+@media (max-width: 968px) {
+    nav {
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+    }
+
+    .nav-shell {
+        padding: 20px;
+    }
+
+    .nav-shell--plain {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        height: 100vh;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 40px;
+        gap: 30px;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+    }
+
+    .nav-menu.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .nav-menu.active li a{
+        font-size: 42px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .nav-menu.active li a::before{
+        content: '';
+        left: 0;
+        display: block;
+        width: 100px;
+        height: 5px;
+        background-color: var(--border);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .project-visual {
+        min-height: 0;
+    }
+
+    .project-visual-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-page {
+        padding: 110px 20px 50px;
+    }
+
+    .case-study-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .case-study-hero {
+        padding: 24px 20px;
+    }
+
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-panel {
+        padding: 20px;
+    }
+
+    .case-study-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .foundation-timeline::before {
+        left: 6px;
+        top: 0;
+        bottom: 0;
+    }
+
+    .foundation-timeline-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 28px 0 28px 28px;
+    }
+
+    .foundation-marker {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .foundation-dot {
+        right: auto;
+        left: -30px;
+        top: 2px;
+    }
+
+    .foundation-content {
+        padding: 24px 20px;
+    }
+
+    section {
+        padding: 100px 20px;
+    }
+
+    .loader-text {
+        font-size: 42px;
+        letter-spacing: 3px;
+    }
+}
+
+
+/* Footer stacks on small screens */
+@media (max-width: 760px) {
+    footer {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+}
+
+/* Tablet: reduce huge gaps that look empty */
+@media (max-width: 1100px) {
+    .section-pager {
+        display: none;
+    }
+
+    .about-grid {
+        gap: 60px;
+    }
+
+    .project-item {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Phones: keep the same style, just tighter + more readable */
+@media (max-width: 968px) {
+    .hero-title {
+        letter-spacing: -2px;
+        /* still bold, less cramped */
+    }
+
+    .hero-subtitle {
+        margin-bottom: 40px;
+    }
+
+    .cta-button {
+        padding: 16px 34px;
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+        letter-spacing: -2px;
+    }
+
+    .contact-links {
+        gap: 26px;
+    }
+}
+
+/* Very small phones (<= 420px): stop the hero title from clipping */
+@media (max-width: 420px) {
+    .hero-title {
+        font-size: clamp(44px, 12vw, 70px);
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .nav-menu {
+        padding: 26px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-bg {
+        display: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .scroll-indicator::before {
+        animation: none !important;
+    }
+
+    .route-section {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .foundation-timeline-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
