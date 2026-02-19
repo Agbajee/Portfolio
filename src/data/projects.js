@@ -5,8 +5,8 @@ export const projects = [
     title: 'Gamified Short-Form Video Backend',
     stage: 'Production System',
     visualType: 'Reward Infrastructure',
-    summary: 'API-first backend powering a reward-based video platform with dual-wallet logic, earning limits, referrals, and secure withdrawals.',
-    summarySecondary: 'Designed with concurrency control, abuse prevention, and scalable feed architecture for high-volume usage.',
+    summary: 'Engineered a high-throughput, API-first backend for a reward-driven short-video platform with dual-wallet accounting, earning caps, referrals, and secure withdrawals.',
+    summarySecondary: 'Built to survive scale with concurrency-safe transactions, anti-abuse guardrails, and feed architecture tuned for heavy real-time demand.',
     tags: ['Laravel', 'MySQL', 'Redis', 'Sanctum'],
     metrics: [
       { value: '2x', label: 'Wallet Layers' },
@@ -32,8 +32,8 @@ export const projects = [
     title: 'Food Delivery Platform API',
     stage: 'Multi-Role Platform',
     visualType: 'Order Lifecycle Engine',
-    summary: 'Backend platform for vendor onboarding, menu management, order lifecycle, and role-based access.',
-    summarySecondary: 'Structured around modular routing and relational design to remain maintainable as product scope expanded.',
+    summary: 'Built the operational core of a full food-delivery ecosystem covering vendor onboarding, menu orchestration, order lifecycle, and strict role-based access.',
+    summarySecondary: 'Architected with modular APIs and a resilient relational model so new product features could ship faster without compromising reliability.',
     tags: ['Laravel', 'Vue', 'MySQL', 'REST API'],
     metrics: [
       { value: '6+', label: 'Core Roles' },
@@ -59,8 +59,8 @@ export const projects = [
     title: 'Authentication & Security Systems',
     stage: 'Security Layer',
     visualType: 'Identity and Access Control',
-    summary: 'Designed OTP login flows, 2FA logic, device verification, and withdrawal protection systems.',
-    summarySecondary: 'Focused on rate limiting, token hardening, and database-level integrity safeguards for critical actions.',
+    summary: 'Architected a hardened identity layer with OTP flows, 2FA enforcement, device trust verification, and withdrawal protection for high-risk actions.',
+    summarySecondary: 'Stacked with rate controls, token hardening, and data-integrity safeguards to reduce abuse while keeping login friction low.',
     tags: ['Laravel', 'Redis', 'JWT / Tokens', 'FCM'],
     metrics: [
       { value: '4+', label: 'Auth Factors' },
