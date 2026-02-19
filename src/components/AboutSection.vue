@@ -24,19 +24,19 @@
       <div class="about-stats">
         <div class="stat-item">
           <div class="stat-number">+7</div>
-          <div class="stat-label">Yrs XP</div>
+          <div class="stat-label">Years XP</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">99.9%</div>
+          <div class="stat-number">80%</div>
           <div class="stat-label">Uptime SLA</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">100K+</div>
-          <div class="stat-label">Active Users</div>
+          <div class="stat-label">Active Users Managed</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">6+</div>
-          <div class="stat-label">Years Exp</div>
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Jobs Completed</div>
         </div>
       </div>
     </div>
