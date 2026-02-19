@@ -6,6 +6,11 @@
         width: 100%;
     }
 
+    nav.nav-scrolled {
+        top: 0;
+        width: 100%;
+    }
+
     .nav-shell {
         padding: 20px;
     }
@@ -42,12 +47,13 @@
         transform: translateX(0);
     }
 
-    .nav-menu.active li a{
+    .nav-menu.active li a {
         font-size: 42px;
         display: block;
         margin-bottom: 10px;
     }
-    .nav-menu.active li a::before{
+
+    .nav-menu.active li a::before {
         content: '';
         left: 0;
         display: block;
@@ -171,11 +177,6 @@
 
 /* Phones: keep the same style, just tighter + more readable */
 @media (max-width: 968px) {
-    .hero-title {
-        letter-spacing: -2px;
-        /* still bold, less cramped */
-    }
-
     .hero-subtitle {
         margin-bottom: 40px;
     }
@@ -194,13 +195,8 @@
     }
 }
 
-/* Very small phones (<= 420px): stop the hero title from clipping */
+/* Very small phones (<= 420px) */
 @media (max-width: 420px) {
-    .hero-title {
-        font-size: clamp(44px, 12vw, 70px);
-        letter-spacing: -1px;
-    }
-
     .hero-subtitle {
         font-size: 15px;
     }

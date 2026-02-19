@@ -1,39 +1,14 @@
 <template>
-  <nav>
-    <LiquidGlass
-      v-if="isDesktop"
-      v-bind="shellProps"
-      class-name="nav-shell"
-    >
+  <nav :class="{ 'nav-scrolled': isScrolled }">
+    <div class="nav-shell nav-shell--plain">
       <a href="#home" class="logo" @click.prevent="handleNavigate('home')">AYOMIDE AGBAJE</a>
       <button type="button" class="menu-toggle" @click="$emit('toggle-menu')" aria-label="Toggle menu">
         <Bars3Icon class="menu-toggle-icon" />
       </button>
       <ul class="nav-menu" :class="{ active: isMenuActive }">
         <li v-for="item in navItems" :key="item.id">
-          <a
-            :href="`#${item.id}`"
-            :class="{ active: activeSection === item.id }"
-            @click.prevent="handleNavigate(item.id)"
-          >
-            {{ item.label }}
-          </a>
-        </li>
-      </ul>
-    </LiquidGlass>
-
-    <div v-else class="nav-shell nav-shell--plain">
-      <a href="#home" class="logo" @click.prevent="handleNavigate('home')">AYOMIDE AGBAJE</a>
-      <button type="button" class="menu-toggle" @click="$emit('toggle-menu')" aria-label="Toggle menu">
-        <Bars3Icon class="menu-toggle-icon" />
-      </button>
-      <ul class="nav-menu" :class="{ active: isMenuActive }">
-        <li v-for="item in navItems" :key="item.id">
-          <a
-            :href="`#${item.id}`"
-            :class="{ active: activeSection === item.id }"
-            @click.prevent="handleNavigate(item.id)"
-          >
+          <a :href="`#${item.id}`" :class="{ active: activeSection === item.id }"
+            @click.prevent="handleNavigate(item.id)">
             {{ item.label }}
           </a>
         </li>
@@ -43,9 +18,8 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { Bars3Icon } from '@heroicons/vue/24/outline'
-import { LiquidGlass } from '@wxperia/liquid-glass-vue'
 
 const props = defineProps({
   isMenuActive: {
@@ -64,10 +38,10 @@ const props = defineProps({
 
 const emit = defineEmits(['toggle-menu', 'close-menu', 'navigate'])
 
-const isDesktop = ref(false)
+const isScrolled = ref(false)
 
-const updateViewport = () => {
-  isDesktop.value = window.innerWidth > 968
+const updateScrollState = () => {
+  isScrolled.value = window.scrollY > 20
 }
 
 const handleNavigate = (sectionId) => {
@@ -78,27 +52,11 @@ const handleNavigate = (sectionId) => {
 }
 
 onMounted(() => {
-  updateViewport()
-  window.addEventListener('resize', updateViewport)
+  updateScrollState()
+  window.addEventListener('scroll', updateScrollState, { passive: true })
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateViewport)
-})
-
-const shellProps = computed(() => {
-  return {
-    displacementScale: 95,
-    blurAmount: 0.12,
-    saturation: 165,
-    aberrationIntensity: 2.2,
-    elasticity: 0.14,
-    cornerRadius: 999,
-    mode: 'shader',
-    effect: 'liquidGlass',
-    overLight: false,
-    padding: '0px',
-    style: { width: '100%' }
-  }
+  window.removeEventListener('scroll', updateScrollState)
 })
 </script>

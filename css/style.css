@@ -9,10 +9,9 @@
 :root {
     --bg: #0a0a0a;
     --text: #e8e8e8;
-    --dim: #666;
+    --dim: #9e9e9e;
     --accent: #fff;
-    /* --border: #1a1a1a; */
-    --border: #eb8a8a;
+    --border: #f06a6a;
 }
 
 html {
@@ -54,21 +53,28 @@ nav {
     top: 18px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(980px, calc(100% - 48px));
+    width: 980px;
     z-index: 1000;
+    transition: top 0.35s ease, width 0.35s ease;
+}
+
+nav.nav-scrolled {
+    top: 12px;
+    width: min(930px, calc(100% - 36px));
 }
 
 .nav-shell {
     width: 100%;
-    padding: 14px 26px;
+    padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    transition: padding 0.35s ease;
 }
 
 .nav-shell--plain {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.295);
     border-radius: 999px;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -86,15 +92,12 @@ nav {
 
 .nav-menu {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-menu a {
-    color: var(--dim);
+    color: var(--text);
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -102,15 +105,12 @@ nav {
     text-transform: uppercase;
     transition: color 0.3s, background-color 0.3s, border-color 0.3s;
     position: relative;
-    padding: 8px 14px;
-    border-radius: 999px;
-    border: 1px solid transparent;
 }
 
 .nav-menu a::after {
     content: '';
     position: absolute;
-    bottom: 4px;
+    bottom: -3px;
     left: 14px;
     width: 0;
     height: 1px;
@@ -125,9 +125,7 @@ nav {
 }
 
 .nav-menu a.active {
-    color: var(--accent);
-    border-color: rgba(255, 255, 255, 0.24);
-    background: rgba(255, 255, 255, 0.09);
+    color: var(--border);
 }
 
 .nav-menu a:hover::after {
@@ -231,24 +229,6 @@ nav {
     color: var(--dim);
     margin-bottom: 30px;
     opacity: 0;
-}
-
-.hero-title {
-    font-size: clamp(60px, 12vw, 160px);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    margin-bottom: 40px;
-    opacity: 0;
-}
-
-.hero-title .line {
-    display: block;
-    overflow: hidden;
-}
-
-.hero-title .line span {
-    display: inline-block;
 }
 
 .hero-subtitle {
@@ -851,6 +831,9 @@ body.enhanced-motion .route-section.is-visible {
 }
 
 .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
     color: var(--text);
@@ -863,6 +846,12 @@ body.enhanced-motion .route-section.is-visible {
 .contact-link:hover {
     border-bottom-color: var(--accent);
     color: var(--accent);
+}
+
+.contact-link-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 /* Footer */
@@ -1097,25 +1086,12 @@ footer p {
    Add this at the end
 ========================= */
 
-/* Prevent random horizontal overflow from big type / transforms */
+/* Prevent random horizontal overflow from transforms */
 body {
     overflow-x: clip;
 }
 
-.hero-title {
-    word-break: keep-all;
-}
-
-.hero-title .line {
-    padding: 0 0.02em;
-}
-
 /* tiny safety */
-
-/* Make nav padding scale instead of staying huge */
-.nav-shell {
-    padding: clamp(12px, 1.6vw, 16px) clamp(18px, 3vw, 28px);
-}
 
 /* Make section padding scale better on smaller screens */
 section {

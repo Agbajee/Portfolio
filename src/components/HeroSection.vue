@@ -7,12 +7,6 @@
     <div class="hero-content">
       <div class="hero-label">Full-Stack Engineer (Backend-First)</div>
 
-      <h1 class="hero-title">
-        <div class="line"><span>SECURE</span></div>
-        <div class="line"><span>SCALABLE</span></div>
-        <div class="line"><span>PRODUCT SYSTEMS</span></div>
-      </h1>
-
       <p class="hero-subtitle">
         Laravel, Vue, Flutter. Backend architecture, Security, and Industrial level performance.
       </p>

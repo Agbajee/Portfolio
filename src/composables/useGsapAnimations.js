@@ -8,7 +8,9 @@ let hasPlayedLoader = false
 
 export function useGsapAnimations() {
   onMounted(() => {
-    if (hasPlayedLoader) {
+    const shouldPlayLoader = !hasPlayedLoader
+
+    if (!shouldPlayLoader) {
       gsap.set('.loader-text', { opacity: 0 })
       gsap.set('.page-loader', { yPercent: -100 })
     } else {
@@ -33,17 +35,11 @@ export function useGsapAnimations() {
       hasPlayedLoader = true
     }
 
-    const heroTl = gsap.timeline({ delay: 1.5 })
+    const heroDelay = shouldPlayLoader ? 1.5 : 0.2
+    const heroTl = gsap.timeline({ delay: heroDelay })
     heroTl
       .to('.hero-label', { opacity: 1, y: 0, duration: 0.8 })
-      .to('.hero-title .line span', {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
-      })
-      .to('.hero-subtitle', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
+      .to('.hero-subtitle', { opacity: 1, y: 0, duration: 0.8 }, '-=0.2')
       .to('.cta-button', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
       .to('.scroll-indicator', { opacity: 1, duration: 0.8 }, '-=0.4')
 
