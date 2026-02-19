@@ -3,19 +3,25 @@
     <div class="hero-bg">
       <canvas id="particleCanvas"></canvas>
     </div>
+
     <div class="hero-content">
-      <div class="hero-label">Backend Engineer</div>
+      <div class="hero-label">Full-Stack Engineer (Backend-First)</div>
+
       <h1 class="hero-title">
-        <div class="line"><span>RELIABLE</span></div>
-        <div class="line"><span>SYSTEMS</span></div>
-        <div class="line"><span>AT SCALE</span></div>
+        <div class="line"><span>SECURE</span></div>
+        <div class="line"><span>SCALABLE</span></div>
+        <div class="line"><span>PRODUCT SYSTEMS</span></div>
       </h1>
+
       <p class="hero-subtitle">
-        Building robust backend infrastructure, designing clean APIs,
-        and shipping products that solve real problems.
+        Laravel, Vue, Flutter. Backend architecture, Security, and Industrial level performance.
       </p>
-      <a href="#work" class="cta-button" @click.prevent="$emit('navigate', 'work')">Explore Work</a>
+
+      <a href="#work" class="cta-button" @click.prevent="$emit('navigate', 'work')">
+        View Case Studies
+      </a>
     </div>
+
     <div class="scroll-indicator">Scroll</div>
   </section>
 </template>

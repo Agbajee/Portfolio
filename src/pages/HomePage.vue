@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import SiteHeader from '../components/SiteHeader.vue'
@@ -144,12 +144,6 @@ const setupSectionVisibilityObserver = () => {
   })
 }
 
-watch(activeSection, (sectionId) => {
-  if (window.location.hash !== `#${sectionId}`) {
-    window.history.replaceState(null, '', `#${sectionId}`)
-  }
-})
-
 onMounted(async () => {
   document.body.classList.add('enhanced-motion')
   await nextTick()
@@ -160,12 +154,6 @@ onMounted(async () => {
   }
 
   setupSectionVisibilityObserver()
-
-  const initialHash = window.location.hash.replace('#', '')
-  const hasValidHash = sectionItems.some((item) => item.id === initialHash)
-  if (hasValidHash) {
-    requestAnimationFrame(() => navigateToSection(initialHash))
-  }
 
   handleScrollState()
   window.addEventListener('scroll', handleScrollState, { passive: true })
