@@ -177,12 +177,21 @@
 
 /* Phones: keep the same style, just tighter + more readable */
 @media (max-width: 968px) {
+    .hero-content {
+        bottom: clamp(110px, 22vh, 180px);
+        width: min(100%, 760px);
+    }
+
     .hero-subtitle {
         margin-bottom: 40px;
     }
 
     .cta-button {
         padding: 16px 34px;
+    }
+
+    .scroll-indicator {
+        bottom: 24px;
     }
 
     .section-title {
@@ -197,6 +206,10 @@
 
 /* Very small phones (<= 420px) */
 @media (max-width: 420px) {
+    .hero-content {
+        bottom: 100px;
+    }
+
     .hero-subtitle {
         font-size: 15px;
     }

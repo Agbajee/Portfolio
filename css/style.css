@@ -207,16 +207,23 @@ nav.nav-scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 1;
+    background: #0a0a0a;
 }
 
 .hero-bg canvas {
     display: block;
     width: 100%;
     height: 100%;
+    opacity: 0.72;
 }
 
 .hero-content {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(120px, 18vh, 210px);
+    transform: translateX(-50%);
+    width: min(100%, 920px);
     text-align: center;
     z-index: 2;
     padding: 0 20px;
@@ -1105,11 +1112,6 @@ section {
 .experience-timeline,
 .projects-container {
     width: min(100%, 1600px);
-}
-
-/* HERO: ensure center content doesnÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢t become cramped */
-.hero-content {
-    width: min(100%, 920px);
 }
 
 /* Project visuals should never collapse awkwardly */

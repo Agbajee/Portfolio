@@ -1,7 +1,7 @@
 <template>
   <section id="home" class="hero route-section">
     <div class="hero-bg">
-      <canvas id="particleCanvas"></canvas>
+      <canvas id="heroMathCanvas"></canvas>
     </div>
 
     <div class="hero-content">
